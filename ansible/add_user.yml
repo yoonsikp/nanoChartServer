@@ -1,13 +1,13 @@
 ---
 
-- name: Add new nanoChart user without home folder
+- name: Add new nchart user without home folder
   hosts: local_vm
   gather_facts: no
   tasks:
     - name: create new user
       user:
         name: "{{ new_username }}"
-        group: nanochart_users
+        group: nchart_users
         shell: /sbin/nologin
         password: !
         create_home: no

@@ -1,5 +1,5 @@
-- name: Ensure group "micro_emr_users" exists
+- name: Ensure group "nchart_users" exists
   group:
-    name: nanochart_users
+    name: nchart_users
     state: present
   become: yes

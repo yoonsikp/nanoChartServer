@@ -67,8 +67,8 @@
     state: enabled
   become: yes
 
-- name: Create nanochart_users group
+- name: Create nchart_users group
   include_tasks: create_group.yml
 
-- name: Create nanochart user with home directory
+- name: Create nchart user with home directory
   include_tasks: create_user.yml
