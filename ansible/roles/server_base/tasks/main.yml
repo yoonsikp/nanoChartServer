@@ -5,6 +5,11 @@
     update_cache: yes
   become: yes
 
+- name: Reboot system
+  reboot:
+    connect_timeout: 10
+    reboot_timeout: 40
+
 - name: Install nginx, samba, git, wireguard
   apt:
     pkg:
@@ -19,7 +24,11 @@
       - python3-pip
       - ssl-cert
       - gitolite3
+      - ufw
   become: yes
+
+- name: Rename gitolite3 user to git
+  command: sudo usermod -l git gitolite3
 
 - name: Make sure nmbd Service is stopped
   systemd:
@@ -72,3 +81,4 @@
 
 - name: Create nchart user with home directory
   include_tasks: create_user.yml
+

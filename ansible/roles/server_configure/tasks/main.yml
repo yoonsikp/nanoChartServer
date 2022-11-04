@@ -1,2 +1,5 @@
-- name: Configure safe samba
-  include_tasks: samba.yml
+# - name: Configure safe samba
+#   include_tasks: samba.yml
+
+- name: Configure gitolite.rc
+  include_tasks: gitolite.rc.yml
